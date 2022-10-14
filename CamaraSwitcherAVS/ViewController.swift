@@ -8,6 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigDelegate, configPropertiesButtonDelegate {
+    func ipChanged() {
+        changedIp = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+            self.pingFunction()
+        }
+    }
+    
     var botonSelected : CanalButton?
     @IBOutlet weak var fondo: UIImageView!
     @IBOutlet weak var configButton: UIButton!
@@ -19,6 +27,7 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
     @IBOutlet weak var switchConfig: UISwitch!
     @IBOutlet weak var const2: NSLayoutConstraint!
     @IBOutlet weak var const1: NSLayoutConstraint!
+    var changedIp = false
     var buttonCenter : CGPoint = .zero
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,14 +97,20 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
     }
     func pingFunction()
     {
+        
         let pingInterval:TimeInterval = 2
         let timeoutInterval:TimeInterval = 1
         let configuration = PingConfiguration(interval: pingInterval, with: timeoutInterval)
         if let ipUltrix = UserDefaults.standard.string(forKey: "ultrix") {
+            changedIp = false
         let pinger = try? SwiftyPing(host: ipUltrix, configuration: PingConfiguration(interval: 0.5, with: 5), queue: DispatchQueue.global())
         pinger?.observer = { (response) in
             let duration = response.duration
 //            print(duration,response)
+            if self.changedIp
+            {
+                pinger?.stopPinging()
+            }
             if let e = response.error
             {
                 DispatchQueue.main.async {
@@ -107,17 +122,22 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
             {
                 DispatchQueue.main.async {
                     UserDefaults.standard.set(true, forKey: "ultStats")
-                    self.panasonicStats.backgroundColor = .green
+                    self.ultrixStats.backgroundColor = .green
                 }
             }
         }
         try? pinger?.startPinging()
         }
         if let ipYamaha = UserDefaults.standard.string(forKey: "panasonic") {
+            changedIp = false
             let pinger = try? SwiftyPing(host: ipYamaha, configuration: PingConfiguration(interval: 0.5, with: 5), queue: DispatchQueue.global())
             pinger?.observer = { (response) in
                 let duration = response.duration
 //                print(duration,response)
+                if self.changedIp
+                {
+                    pinger?.stopPinging()
+                }
                 if let e = response.error
                 {
                     DispatchQueue.main.async {

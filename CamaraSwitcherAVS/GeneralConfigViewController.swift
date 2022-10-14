@@ -9,10 +9,13 @@ import UIKit
 
 protocol PickerImageDelegate {
     func imagenSeleccionado(imagen : UIImage?)
+    func ipChanged()
 }
 
 class GeneralConfigViewController: UIViewController,  UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
     var imagen = ""
+    var pa : String?
+    var ul : String?
     var imagePicker = UIImagePickerController()
     var delegate : PickerImageDelegate?
     @IBOutlet weak var imagenFondo: UIImageView!
@@ -37,13 +40,13 @@ class GeneralConfigViewController: UIViewController,  UINavigationControllerDele
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let p = UserDefaults.standard.string(forKey: "panasonic")
+        if let pa = UserDefaults.standard.string(forKey: "panasonic")
         {
-            ipPanasonicField.text = p
+            ipPanasonicField.text = pa
         }
-        if let p = UserDefaults.standard.string(forKey: "ultrix")
+        if let ul = UserDefaults.standard.string(forKey: "ultrix")
         {
-            ipUltrixField.text = p
+            ipUltrixField.text = ul
         }
     }
     
@@ -56,6 +59,7 @@ class GeneralConfigViewController: UIViewController,  UINavigationControllerDele
                 let encoded = try! PropertyListEncoder().encode(data)
                 UserDefaults.standard.set(encoded, forKey: "KEY")
             
+            
         }
         if ipPanasonicField.text != "" && ipUltrixField.text != ""
         {
@@ -63,7 +67,10 @@ class GeneralConfigViewController: UIViewController,  UINavigationControllerDele
             {
                 UserDefaults.standard.set(ipPanasonicField.text!, forKey: "panasonic")
                 UserDefaults.standard.set(ipUltrixField.text!, forKey: "ultrix")
-                
+                if pa != ipPanasonicField.text || ul != ipUltrixField.text
+                {
+                    delegate?.ipChanged()
+                }
                 self.dismiss(animated: true, completion: nil)
             }
             else
