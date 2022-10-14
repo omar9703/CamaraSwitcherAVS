@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103D739A28F64B30009DFB44 /* ConfigButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103D739928F64B30009DFB44 /* ConfigButtonViewController.swift */; };
 		105A183728DE4F9B00693CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A183628DE4F9B00693CE2 /* AppDelegate.swift */; };
 		105A183928DE4F9B00693CE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A183828DE4F9B00693CE2 /* SceneDelegate.swift */; };
 		105A183B28DE4F9B00693CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A183A28DE4F9B00693CE2 /* ViewController.swift */; };
@@ -14,9 +15,16 @@
 		105A184128DE4F9B00693CE2 /* CamaraSwitcherAVS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 105A183F28DE4F9B00693CE2 /* CamaraSwitcherAVS.xcdatamodeld */; };
 		105A184328DE4F9C00693CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105A184228DE4F9C00693CE2 /* Assets.xcassets */; };
 		105A184628DE4F9C00693CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105A184428DE4F9C00693CE2 /* LaunchScreen.storyboard */; };
+		107A33B028F4E762002B19D4 /* CanalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A33AF28F4E762002B19D4 /* CanalButton.swift */; };
+		107A33B328F4EAC0002B19D4 /* CamaraEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A33B228F4EAC0002B19D4 /* CamaraEntity.swift */; };
+		107A33B628F5058E002B19D4 /* GeneralConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A33B428F5058E002B19D4 /* GeneralConfigViewController.swift */; };
+		10B84D9828F9C8F3000AADBA /* SwiftyPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B84D9728F9C8F3000AADBA /* SwiftyPing.swift */; };
+		10B84D9A28F9CF36000AADBA /* PickerDestinyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B84D9928F9CF36000AADBA /* PickerDestinyViewController.swift */; };
+		708B43B1603E900E01EB57CF /* Pods_CamaraSwitcherAVS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4EFD66BF903A32316D2EB5 /* Pods_CamaraSwitcherAVS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		103D739928F64B30009DFB44 /* ConfigButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigButtonViewController.swift; sourceTree = "<group>"; };
 		105A183328DE4F9B00693CE2 /* CamaraSwitcherAVS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamaraSwitcherAVS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		105A183628DE4F9B00693CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		105A183828DE4F9B00693CE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +34,14 @@
 		105A184228DE4F9C00693CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		105A184528DE4F9C00693CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		105A184728DE4F9C00693CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		107A33AF28F4E762002B19D4 /* CanalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanalButton.swift; sourceTree = "<group>"; };
+		107A33B228F4EAC0002B19D4 /* CamaraEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamaraEntity.swift; sourceTree = "<group>"; };
+		107A33B428F5058E002B19D4 /* GeneralConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConfigViewController.swift; sourceTree = "<group>"; };
+		10B84D9728F9C8F3000AADBA /* SwiftyPing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyPing.swift; sourceTree = "<group>"; };
+		10B84D9928F9CF36000AADBA /* PickerDestinyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerDestinyViewController.swift; sourceTree = "<group>"; };
+		4768C78C57F32A56ABCAF0A4 /* Pods-CamaraSwitcherAVS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamaraSwitcherAVS.release.xcconfig"; path = "Target Support Files/Pods-CamaraSwitcherAVS/Pods-CamaraSwitcherAVS.release.xcconfig"; sourceTree = "<group>"; };
+		529295A5DE4FF8DDBD1BAD63 /* Pods-CamaraSwitcherAVS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamaraSwitcherAVS.debug.xcconfig"; path = "Target Support Files/Pods-CamaraSwitcherAVS/Pods-CamaraSwitcherAVS.debug.xcconfig"; sourceTree = "<group>"; };
+		6B4EFD66BF903A32316D2EB5 /* Pods_CamaraSwitcherAVS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamaraSwitcherAVS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				708B43B1603E900E01EB57CF /* Pods_CamaraSwitcherAVS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +61,8 @@
 			children = (
 				105A183528DE4F9B00693CE2 /* CamaraSwitcherAVS */,
 				105A183428DE4F9B00693CE2 /* Products */,
+				D1BFF2920E0543D4100EA553 /* Pods */,
+				F3462E3F7F59C5FFD6A1C53B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +77,55 @@
 		105A183528DE4F9B00693CE2 /* CamaraSwitcherAVS */ = {
 			isa = PBXGroup;
 			children = (
+				107A33B128F4EAAB002B19D4 /* Representation */,
+				107A33AE28F4E745002B19D4 /* Views */,
 				105A183628DE4F9B00693CE2 /* AppDelegate.swift */,
 				105A183828DE4F9B00693CE2 /* SceneDelegate.swift */,
+				10B84D9728F9C8F3000AADBA /* SwiftyPing.swift */,
 				105A183A28DE4F9B00693CE2 /* ViewController.swift */,
 				105A183C28DE4F9B00693CE2 /* Main.storyboard */,
 				105A184228DE4F9C00693CE2 /* Assets.xcassets */,
 				105A184428DE4F9C00693CE2 /* LaunchScreen.storyboard */,
 				105A184728DE4F9C00693CE2 /* Info.plist */,
 				105A183F28DE4F9B00693CE2 /* CamaraSwitcherAVS.xcdatamodeld */,
+				10B84D9928F9CF36000AADBA /* PickerDestinyViewController.swift */,
+				107A33B428F5058E002B19D4 /* GeneralConfigViewController.swift */,
+				103D739928F64B30009DFB44 /* ConfigButtonViewController.swift */,
 			);
 			path = CamaraSwitcherAVS;
+			sourceTree = "<group>";
+		};
+		107A33AE28F4E745002B19D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				107A33AF28F4E762002B19D4 /* CanalButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		107A33B128F4EAAB002B19D4 /* Representation */ = {
+			isa = PBXGroup;
+			children = (
+				107A33B228F4EAC0002B19D4 /* CamaraEntity.swift */,
+			);
+			path = Representation;
+			sourceTree = "<group>";
+		};
+		D1BFF2920E0543D4100EA553 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				529295A5DE4FF8DDBD1BAD63 /* Pods-CamaraSwitcherAVS.debug.xcconfig */,
+				4768C78C57F32A56ABCAF0A4 /* Pods-CamaraSwitcherAVS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F3462E3F7F59C5FFD6A1C53B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B4EFD66BF903A32316D2EB5 /* Pods_CamaraSwitcherAVS.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 105A184A28DE4F9C00693CE2 /* Build configuration list for PBXNativeTarget "CamaraSwitcherAVS" */;
 			buildPhases = (
+				03448054DE04287713C66E25 /* [CP] Check Pods Manifest.lock */,
 				105A182F28DE4F9B00693CE2 /* Sources */,
 				105A183028DE4F9B00693CE2 /* Frameworks */,
 				105A183128DE4F9B00693CE2 /* Resources */,
+				9EA2C6A415D09459E2602E38 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,14 +196,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03448054DE04287713C66E25 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CamaraSwitcherAVS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EA2C6A415D09459E2602E38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CamaraSwitcherAVS/Pods-CamaraSwitcherAVS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CamaraSwitcherAVS/Pods-CamaraSwitcherAVS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CamaraSwitcherAVS/Pods-CamaraSwitcherAVS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		105A182F28DE4F9B00693CE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				103D739A28F64B30009DFB44 /* ConfigButtonViewController.swift in Sources */,
 				105A183B28DE4F9B00693CE2 /* ViewController.swift in Sources */,
 				105A183728DE4F9B00693CE2 /* AppDelegate.swift in Sources */,
+				10B84D9A28F9CF36000AADBA /* PickerDestinyViewController.swift in Sources */,
+				10B84D9828F9C8F3000AADBA /* SwiftyPing.swift in Sources */,
 				105A184128DE4F9B00693CE2 /* CamaraSwitcherAVS.xcdatamodeld in Sources */,
+				107A33B628F5058E002B19D4 /* GeneralConfigViewController.swift in Sources */,
+				107A33B328F4EAC0002B19D4 /* CamaraEntity.swift in Sources */,
+				107A33B028F4E762002B19D4 /* CanalButton.swift in Sources */,
 				105A183928DE4F9B00693CE2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +396,7 @@
 		};
 		105A184B28DE4F9C00693CE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 529295A5DE4FF8DDBD1BAD63 /* Pods-CamaraSwitcherAVS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -299,7 +408,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -310,12 +420,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		105A184C28DE4F9C00693CE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4768C78C57F32A56ABCAF0A4 /* Pods-CamaraSwitcherAVS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -327,7 +438,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -338,7 +450,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

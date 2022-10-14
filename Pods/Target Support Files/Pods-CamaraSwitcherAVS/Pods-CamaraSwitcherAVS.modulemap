@@ -1,0 +1,6 @@
+framework module Pods_CamaraSwitcherAVS {
+  umbrella header "Pods-CamaraSwitcherAVS-umbrella.h"
+
+  export *
+  module * { export * }
+}
