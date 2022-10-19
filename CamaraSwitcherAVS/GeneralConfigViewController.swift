@@ -10,22 +10,26 @@ import UIKit
 protocol PickerImageDelegate {
     func imagenSeleccionado(imagen : UIImage?)
     func ipChanged()
+    func dismissConfig()
 }
 
 class GeneralConfigViewController: UIViewController,  UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
+    @IBOutlet weak var collection: UICollectionView!
     var imagen = ""
     var pa : String?
     var ul : String?
     var imagePicker = UIImagePickerController()
     var delegate : PickerImageDelegate?
+    var canales = [camaraChannel]()
     @IBOutlet weak var imagenFondo: UIImageView!
     @IBOutlet weak var ipPanasonicField: UITextField!
     @IBOutlet weak var ipUltrixField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        collection.register(UINib(nibName: "BotonesOcultosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         
-        
+        canales = CamaraEntity.getCanales() ?? [camaraChannel]()
+        canales = canales.filter({$0.hidden == true})
         // Do any additional setup after loading the view.
     }
     @IBAction func ImagePicker(_ sender: UIButton) {
@@ -82,6 +86,7 @@ class GeneralConfigViewController: UIViewController,  UINavigationControllerDele
         {
             self.alerta(message: "faltan datos por llenar.", title: "Error")
         }
+        delegate?.dismissConfig()
         self.dismiss(animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -129,10 +134,32 @@ class GeneralConfigViewController: UIViewController,  UINavigationControllerDele
 
 extension UIViewController
 {
+    
     func alerta(message: String, title: String = "") {
       let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
       let OKAction = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
       alertController.addAction(OKAction)
       self.present(alertController, animated: true, completion: nil)
     }
+}
+extension GeneralConfigViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource
+{
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return canales.count
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? BotonesOcultosCollectionViewCell else
+        {
+         return UICollectionViewCell()
+        }
+        cell.canal = canales[indexPath.row]
+        cell.canalLabel.text = "Canal " + "\(canales[indexPath.row].id ?? 0)"
+        cell.switcher.isOn = canales[indexPath.row].hidden
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 80, height: 80)
+    }
+    
 }

@@ -197,19 +197,20 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
         self.present(vc, animated: true, completion: nil)
     }
     
-    func configsSelected(ultrix: Int, panasonic: Int, nombre: String) {
+    func configsSelected(ultrix: Int, panasonic: Int, nombre: String, hidden : Bool) {
         botonSelected?.idUltrix = ultrix + 1
         botonSelected?.idPanasonic = panasonic + 1
         botonSelected?.setTitle(nombre, for: .normal)
 //        botonSelected?.setup()
+        botonSelected?.isHidden = hidden
         if let c = CamaraEntity.getCanal(tag: botonSelected?.tag ?? 1)
         {
-            let y = camaraChannel(id: botonSelected?.tag ?? 1, ultrixId: ultrix + 1, nombre: nombre, robotId: panasonic + 1, xPoint: Float(botonSelected?.center.x ?? 0), yPoint: Float(botonSelected?.center.y ?? 0))
+            let y = camaraChannel(id: botonSelected?.tag ?? 1, ultrixId: ultrix + 1, nombre: nombre, robotId: panasonic + 1, xPoint: Float(botonSelected?.center.x ?? 0), yPoint: Float(botonSelected?.center.y ?? 0),hidden: hidden)
             CamaraEntity.UpdateChannel(channel: y)
         }
         else
         {
-            let y = camaraChannel(id: botonSelected?.tag ?? 1, ultrixId: ultrix + 1, nombre: nombre, robotId: panasonic + 1, xPoint: Float(botonSelected?.center.x ?? 0), yPoint: Float(botonSelected?.center.y ?? 0))
+            let y = camaraChannel(id: botonSelected?.tag ?? 1, ultrixId: ultrix + 1, nombre: nombre, robotId: panasonic + 1, xPoint: Float(botonSelected?.center.x ?? 0), yPoint: Float(botonSelected?.center.y ?? 0),hidden: hidden)
             CamaraEntity.saveChannel(camara: y)
         }
     }
@@ -225,6 +226,14 @@ extension ViewController: pickerTvDelegate
         }
     }
     
-    
+    func dismissConfig() {
+        for x in self.view.subviews
+        {
+            if let t = x as? CanalButton
+            {
+                t.setup()
+            }
+        }
+    }
 }
 

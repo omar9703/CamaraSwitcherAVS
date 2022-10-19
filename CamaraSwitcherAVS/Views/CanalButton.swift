@@ -45,7 +45,7 @@ class CanalButton: UIButton {
             self.setTitle(c.nombre, for: .normal)
             self.idUltrix = c.ultrixId ?? self.tag
             self.idPanasonic = c.robotId ?? self.tag
-            
+            self.isHidden = c.hidden
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5)
             {
                 self.center = CGPoint(x: CGFloat( c.xPoint ?? 0), y: CGFloat( c.yPoint ?? 0))
@@ -77,12 +77,12 @@ class CanalButton: UIButton {
             pan.view!.center = loc
             if let c = CamaraEntity.getCanal(tag: self.tag)
             {
-                let y = camaraChannel(id: self.tag, ultrixId: idUltrix, nombre: self.titleLabel?.text ?? "", robotId: idPanasonic, xPoint: Float(loc.x), yPoint: Float(loc.y))
+                let y = camaraChannel(id: self.tag, ultrixId: idUltrix, nombre: self.titleLabel?.text ?? "", robotId: idPanasonic, xPoint: Float(loc.x), yPoint: Float(loc.y),hidden: false)
                 CamaraEntity.UpdateChannel(channel: y)
             }
             else
             {
-                let y = camaraChannel(id: self.tag, ultrixId: idUltrix, nombre: self.titleLabel?.text ?? "", robotId: idPanasonic, xPoint: Float(loc.x), yPoint: Float(loc.y))
+                let y = camaraChannel(id: self.tag, ultrixId: idUltrix, nombre: self.titleLabel?.text ?? "", robotId: idPanasonic, xPoint: Float(loc.x), yPoint: Float(loc.y),hidden: false)
                 CamaraEntity.saveChannel(camara: y)
             }
 //            guard let v = pan.view, let sv = v.superview else { return }

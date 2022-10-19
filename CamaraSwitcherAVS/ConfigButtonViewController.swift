@@ -8,11 +8,11 @@
 import UIKit
 
 protocol configPropertiesButtonDelegate {
-    func configsSelected(ultrix : Int, panasonic : Int, nombre : String)
+    func configsSelected(ultrix : Int, panasonic : Int, nombre : String, hidden : Bool)
 }
 
 class ConfigButtonViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+    var hidden = false
     var titulo = ""
     var rowUltrix  = 0
     var rowPansonic = 0
@@ -36,6 +36,16 @@ class ConfigButtonViewController: UIViewController, UIPickerViewDelegate, UIPick
         tituloField.text = titulo
         // Do any additional setup after loading the view.
     }
+    @IBAction func change(_ sender: UISwitch) {
+        if sender.isOn
+        {
+            hidden = true
+        }
+        else
+        {
+            hidden = false
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         ultrixpicker.selectRow(rowUltrix, inComponent: 0, animated: true)
@@ -43,7 +53,7 @@ class ConfigButtonViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     @IBAction func closeAction(_ sender: UIButton) {
-        delegate?.configsSelected(ultrix: rowUltrix, panasonic: rowPansonic, nombre: tituloField.text ?? "")
+        delegate?.configsSelected(ultrix: rowUltrix, panasonic: rowPansonic, nombre: tituloField.text ?? "", hidden: hidden)
         self.dismiss(animated: true, completion: nil)
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

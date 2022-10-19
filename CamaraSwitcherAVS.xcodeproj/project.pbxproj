@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		103D739A28F64B30009DFB44 /* ConfigButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103D739928F64B30009DFB44 /* ConfigButtonViewController.swift */; };
+		104E677128FE36EA009612B4 /* BotonesOcultosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104E676F28FE36EA009612B4 /* BotonesOcultosCollectionViewCell.swift */; };
+		104E677228FE36EA009612B4 /* BotonesOcultosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104E677028FE36EA009612B4 /* BotonesOcultosCollectionViewCell.xib */; };
 		105A183728DE4F9B00693CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A183628DE4F9B00693CE2 /* AppDelegate.swift */; };
 		105A183928DE4F9B00693CE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A183828DE4F9B00693CE2 /* SceneDelegate.swift */; };
 		105A183B28DE4F9B00693CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A183A28DE4F9B00693CE2 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		103D739928F64B30009DFB44 /* ConfigButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigButtonViewController.swift; sourceTree = "<group>"; };
+		104E676F28FE36EA009612B4 /* BotonesOcultosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotonesOcultosCollectionViewCell.swift; sourceTree = "<group>"; };
+		104E677028FE36EA009612B4 /* BotonesOcultosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BotonesOcultosCollectionViewCell.xib; sourceTree = "<group>"; };
 		105A183328DE4F9B00693CE2 /* CamaraSwitcherAVS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamaraSwitcherAVS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		105A183628DE4F9B00693CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		105A183828DE4F9B00693CE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 				10B84D9928F9CF36000AADBA /* PickerDestinyViewController.swift */,
 				107A33B428F5058E002B19D4 /* GeneralConfigViewController.swift */,
 				103D739928F64B30009DFB44 /* ConfigButtonViewController.swift */,
+				104E676F28FE36EA009612B4 /* BotonesOcultosCollectionViewCell.swift */,
+				104E677028FE36EA009612B4 /* BotonesOcultosCollectionViewCell.xib */,
 			);
 			path = CamaraSwitcherAVS;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 				105A184628DE4F9C00693CE2 /* LaunchScreen.storyboard in Resources */,
 				105A184328DE4F9C00693CE2 /* Assets.xcassets in Resources */,
 				105A183E28DE4F9B00693CE2 /* Main.storyboard in Resources */,
+				104E677228FE36EA009612B4 /* BotonesOcultosCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +255,7 @@
 				105A183728DE4F9B00693CE2 /* AppDelegate.swift in Sources */,
 				10B84D9A28F9CF36000AADBA /* PickerDestinyViewController.swift in Sources */,
 				10B84D9828F9C8F3000AADBA /* SwiftyPing.swift in Sources */,
+				104E677128FE36EA009612B4 /* BotonesOcultosCollectionViewCell.swift in Sources */,
 				105A184128DE4F9B00693CE2 /* CamaraSwitcherAVS.xcdatamodeld in Sources */,
 				107A33B628F5058E002B19D4 /* GeneralConfigViewController.swift in Sources */,
 				107A33B328F4EAC0002B19D4 /* CamaraEntity.swift in Sources */,
@@ -416,7 +424,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.avs.CamaraSwitcherAVS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.CamaraSwitcherAVS1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -446,7 +454,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.avs.CamaraSwitcherAVS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.avs.CamaraSwitcherAVS1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

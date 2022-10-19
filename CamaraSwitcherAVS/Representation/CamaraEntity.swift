@@ -18,6 +18,7 @@ struct camaraChannel : Codable
     let robotId : Int?
     let xPoint : Float?
     let yPoint : Float?
+    var hidden : Bool
 }
 
 class CamaraEntity
@@ -45,6 +46,7 @@ class CamaraEntity
         Club.setValue(camara.nombre, forKey: "nombre")
         Club.setValue(camara.xPoint, forKey: "xPoint")
         Club.setValue(camara.yPoint, forKey: "yPoint")
+        Club.setValue(camara.hidden, forKey: "hidden")
         
         do {
           try managedContext.save()
@@ -81,6 +83,7 @@ class CamaraEntity
                     us.setValue(channel.ultrixId, forKey: "ultrixId")
                     us.setValue(channel.xPoint, forKey: "xPoint")
                     us.setValue(channel.yPoint, forKey: "yPoint")
+                    us.setValue(channel.hidden, forKey: "hidden")
                     try managedContext.save()
                 }
                 else
@@ -147,7 +150,7 @@ class CamaraEntity
             {
                 if let a = array.first
                 {
-                    let au = camaraChannel(id: a.value(forKey: "id") as? Int, ultrixId: a.value(forKey: "ultrixId") as? Int, nombre: a.value(forKey: "nombre") as? String, robotId: a.value(forKey: "robotId") as? Int, xPoint: a.value(forKey: "xPoint") as? Float, yPoint: a.value(forKey: "yPoint") as? Float)
+                    let au = camaraChannel(id: a.value(forKey: "id") as? Int, ultrixId: a.value(forKey: "ultrixId") as? Int, nombre: a.value(forKey: "nombre") as? String, robotId: a.value(forKey: "robotId") as? Int, xPoint: a.value(forKey: "xPoint") as? Float, yPoint: a.value(forKey: "yPoint") as? Float,hidden: a.value(forKey: "hidden") as? Bool ?? false)
                     return au
                 }
                 else
@@ -186,7 +189,7 @@ class CamaraEntity
             if array.count > 0
             {
                 for a in array{
-                    let au = camaraChannel(id: a.value(forKey: "id") as? Int, ultrixId: a.value(forKey: "ultrixId") as? Int, nombre: a.value(forKey: "nombre") as? String, robotId: a.value(forKey: "robotId") as? Int, xPoint: a.value(forKey: "xPoint") as? Float, yPoint: a.value(forKey: "yPoint") as? Float)
+                    let au = camaraChannel(id: a.value(forKey: "id") as? Int, ultrixId: a.value(forKey: "ultrixId") as? Int, nombre: a.value(forKey: "nombre") as? String, robotId: a.value(forKey: "robotId") as? Int, xPoint: a.value(forKey: "xPoint") as? Float, yPoint: a.value(forKey: "yPoint") as? Float,hidden: a.value(forKey: "hidden") as? Bool ?? false)
                     cb.append(au)
                 }
                     
