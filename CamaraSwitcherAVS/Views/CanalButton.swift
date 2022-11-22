@@ -35,7 +35,11 @@ class CanalButton: UIButton {
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
         self.addGestureRecognizer(longPressRecognizer)
         self.addTarget(self, action: #selector(self.controlPressed(_:)), for: .touchUpInside)
-        self.titleLabel?.font = .systemFont(ofSize: 14)
+        self.titleLabel?.font = .systemFont(ofSize: 10)
+        self.layer.cornerRadius = self.frame.width / 2
+        self.layer.borderWidth = 1.5
+        self.layer.borderColor = UIColor(red: 108/255, green: 127/255, blue: 227/255, alpha: 1).cgColor
+        self.backgroundColor = UIColor(red: 61/255, green: 121/255, blue: 196/255, alpha: 1)
 //        self.removeConstraints(self.constraints)
 //        self.translatesAutoresizingMaskIntoConstraints = false
     
@@ -117,7 +121,8 @@ class CanalButton: UIButton {
         {
             if UserDefaults.standard.bool(forKey: "panaStats")
             {
-            self.backgroundColor = .green
+                sender.backgroundColor = UIColor(red: 195/255, green: 24/255, blue: 53/255, alpha: 1)
+                sender.layer.borderColor = UIColor(red: 231/255, green: 25/255, blue: 76/255, alpha: 1).cgColor
             if let add = UserDefaults.standard.string(forKey: "panasonic")
             {
             let url = "http://\(add)/cgi-bin/aw_cam?cmd=XCN:01:\(self.idPanasonic)&res=1"
@@ -140,7 +145,8 @@ class CanalButton: UIButton {
                     {
                         if f != self
                         {
-                            f.backgroundColor = .lightGray
+                            f.layer.borderColor = UIColor(red: 108/255, green: 127/255, blue: 227/255, alpha: 1).cgColor
+                            f.backgroundColor = UIColor(red: 61/255, green: 121/255, blue: 196/255, alpha: 1)
                         }
                     }
                 }

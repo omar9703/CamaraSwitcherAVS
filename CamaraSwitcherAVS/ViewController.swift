@@ -16,6 +16,8 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
         }
     }
     
+    @IBOutlet weak var scrollview: UIScrollView!
+    @IBOutlet weak var contentZoom: UIView!
     var botonSelected : CanalButton?
     @IBOutlet weak var fondo: UIImageView!
     @IBOutlet weak var configButton: UIButton!
@@ -35,6 +37,10 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
         LabelTV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tvActionSelected(_:))))
         var co = 0
         var alt = 0
+        
+        scrollview.minimumZoomScale = 1
+        scrollview.maximumZoomScale = 6
+        scrollview.delegate = self
         panasonicStats.layer.cornerRadius = 12
         ultrixStats.layer.cornerRadius = 12
         for x in Range(0...49)
@@ -44,12 +50,12 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
                 co = 0
                 alt = alt + 70
             }
-        let bu = CanalButton(frame: CGRect(x: 235 + (co*70), y: 210 + alt, width: 50, height: 50))
-        bu.setTitle("\(x + 1)", for: .normal)
-        bu.backgroundColor = .lightGray
+            let bu = CanalButton(frame: CGRect(x: 235 + (co*70), y: 160 + alt, width: 25, height: 25))
+            bu.setTitle("\(x + 1)", for: .normal)
+            bu.backgroundColor = .lightGray
             bu.delegate = self
-        bu.setup()
-        self.view.addSubview(bu)
+            bu.setup()
+            self.contentZoom.addSubview(bu)
             co = co + 1
         }
         // Do any additional setup after loading the view.
@@ -61,6 +67,16 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
 //        self.view.removeConstraints([const1,const2])
 //        self.view.removeConstraints(self.view.constraints)
         loadImage()
+        
+        for gesture in scrollview.gestureRecognizers!
+        {
+            if let gesture = gesture as? UIPanGestureRecognizer
+            {
+                var panGr = gesture
+                panGr.minimumNumberOfTouches = 2
+                panGr.maximumNumberOfTouches = 2
+            }
+        }
     }
     @objc func tvActionSelected(_ sender : UITapGestureRecognizer)
     {
@@ -176,8 +192,12 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
         debugPrint("gesture")
         configLabel.isHidden = false
         switchConfig.isHidden = false
-//        .isHidden = false
-//        mixLabel.text = "Mix \(sliderView.tag)"
+        NSLog("Pinch scale: %f", sender.scale)
+           //var transform = CGAffineTransformMakeScale(sender.scale, sender.scale)
+                                             // you can implement any int/float value in context of what scale you want to zoom in or out
+        
+           //self.view.transform = transform
+        
     }
     
     func imagenSeleccionado(imagen: UIImage?) {
@@ -237,3 +257,9 @@ extension ViewController: pickerTvDelegate
     }
 }
 
+extension ViewController: UIScrollViewDelegate
+{
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return contentZoom
+    }
+}
