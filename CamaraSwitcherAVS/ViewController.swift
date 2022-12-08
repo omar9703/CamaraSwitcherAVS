@@ -119,7 +119,8 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
         let configuration = PingConfiguration(interval: pingInterval, with: timeoutInterval)
         if let ipUltrix = UserDefaults.standard.string(forKey: "ultrix") {
             changedIp = false
-        let pinger = try? SwiftyPing(host: ipUltrix, configuration: PingConfiguration(interval: 0.5, with: 5), queue: DispatchQueue.global())
+            
+        let pinger = try? SwiftyPing(host: ipUltrix, configuration: PingConfiguration(interval: 1.5, with: 6), queue: DispatchQueue.global())
         pinger?.observer = { (response) in
             let duration = response.duration
 //            print(duration,response)
@@ -146,7 +147,7 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
         }
         if let ipYamaha = UserDefaults.standard.string(forKey: "panasonic") {
             changedIp = false
-            let pinger = try? SwiftyPing(host: ipYamaha, configuration: PingConfiguration(interval: 0.5, with: 5), queue: DispatchQueue.global())
+            let pinger = try? SwiftyPing(host: ipYamaha, configuration: PingConfiguration(interval: 1.5, with: 6), queue: DispatchQueue.global())
             pinger?.observer = { (response) in
                 let duration = response.duration
 //                print(duration,response)
@@ -247,7 +248,7 @@ extension ViewController: pickerTvDelegate
     }
     
     func dismissConfig() {
-        for x in self.view.subviews
+        for x in self.contentZoom.subviews
         {
             if let t = x as? CanalButton
             {

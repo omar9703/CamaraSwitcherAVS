@@ -16,6 +16,7 @@ class CanalButton: UIButton {
     @IBOutlet weak var delegate : buttonActionsConfigDelegate?
     var presionado = false
     var idUltrix = 1
+    var socket : Socket?
     var idPanasonic = 1
     var xConstraint: NSLayoutConstraint!
     var yConstraint: NSLayoutConstraint!
@@ -176,22 +177,23 @@ class CanalButton: UIButton {
             
             do
             {
-                let client = try Socket(.inet, type: .stream, protocol: .tcp)
-                let y = try client.wait(for: .write, timeout: 1, retryOnInterrupt: true)
+                self.socket = try Socket(.inet, type: .stream, protocol: .tcp)
+                let y = try self.socket?.wait(for: .write, timeout: 1, retryOnInterrupt: true)
                 debugPrint(y)
-                try client.connect(port: 7788, address: add)
+                try self.socket?.connect(port: 7788, address: add)
                 
                 let message = ([UInt8])("XPT I:1 D:\(UserDefaults.standard.integer(forKey: "destiny") + 1) S:\(t) \r\n".utf8)
-                try client.write(message)
+                try self.socket?.write(message)
                 debugPrint("holis")
                 //            var buffer = [UInt8](repeating: 0, count: 1500)
                 //            try client.read(&buffer, size: 100)
-                client.close()
+                self.socket?.close()
                 debugPrint("holis")
                 
             }
             catch
             {
+                self.socket?.close()
                 debugPrint(error)
                 DispatchQueue.main.async {
                     self.backgroundColor = .lightGray
