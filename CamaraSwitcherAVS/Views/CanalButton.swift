@@ -178,22 +178,17 @@ class CanalButton: UIButton {
             do
             {
                 self.socket = try Socket(.inet, type: .stream, protocol: .tcp)
-                let y = try self.socket?.wait(for: .write, timeout: 1, retryOnInterrupt: true)
-                debugPrint(y)
                 try self.socket?.connect(port: 7788, address: add)
                 
                 let message = ([UInt8])("XPT I:1 D:\(UserDefaults.standard.integer(forKey: "destiny") + 1) S:\(t) \r\n".utf8)
                 try self.socket?.write(message)
-                debugPrint("holis")
                 //            var buffer = [UInt8](repeating: 0, count: 1500)
                 //            try client.read(&buffer, size: 100)
                 self.socket?.close()
-                debugPrint("holis")
                 
             }
             catch
             {
-                self.socket?.close()
                 debugPrint(error)
                 DispatchQueue.main.async {
                     self.backgroundColor = .lightGray
