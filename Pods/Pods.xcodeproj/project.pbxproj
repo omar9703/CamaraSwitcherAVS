@@ -125,7 +125,7 @@
 		98527D7196957AAB07B79E2E2AFDE23E /* IQKeyboardManager */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManager; path = IQKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		989D46D3CD64A405F501DE53CD4A2589 /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardReturnKeyHandler.m; path = IQKeyboardManager/IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
 		9D1737CC6F75630C6F39367558A73156 /* IQBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQBarButtonItem.m; path = IQKeyboardManager/IQToolbar/IQBarButtonItem.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A35042CC39D25EE0F02F49B9B73831AF /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+IQKeyboardToolbar.h"; path = "IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
 		A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		ABCD96A222A98EEF2F28BA229ECA87ED /* Socket.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Socket.swift.modulemap; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		F19F7E0723ED99F71D0DF8A98BD1FAB2 /* IQTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTextView.m; path = IQKeyboardManager/IQTextView/IQTextView.m; sourceTree = "<group>"; };
 		F1DD61EDD906BC385074C4FCDDFB33B3 /* Pods-CamaraSwitcherAVS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CamaraSwitcherAVS.modulemap"; sourceTree = "<group>"; };
 		F65430CC5C37DA7D46252235512F963C /* Pods-CamaraSwitcherAVS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CamaraSwitcherAVS.debug.xcconfig"; sourceTree = "<group>"; };
-		FB9EC26EDF9F26682728AA76EBF87614 /* Socket.swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Socket.swift; path = SocketSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB9EC26EDF9F26682728AA76EBF87614 /* SocketSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +188,7 @@
 			children = (
 				98527D7196957AAB07B79E2E2AFDE23E /* IQKeyboardManager */,
 				3B4BD0350B771F4BA514F5063C5AF407 /* Pods-CamaraSwitcherAVS */,
-				FB9EC26EDF9F26682728AA76EBF87614 /* Socket.swift */,
+				FB9EC26EDF9F26682728AA76EBF87614 /* SocketSwift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,7 +215,6 @@
 				2FD492BA85D5801CD3CC63ACC711E158 /* Type.swift */,
 				D88CF1E1EFDB9AE072D8A53470D98001 /* Support Files */,
 			);
-			name = Socket.swift;
 			path = Socket.swift;
 			sourceTree = "<group>";
 		};
@@ -269,7 +268,6 @@
 				0461CBC32ADE471C83DE620A76774AE4 /* IQUIViewController+Additions.m */,
 				5DCF35FE150D9A3305593011B8D18606 /* Support Files */,
 			);
-			name = IQKeyboardManager;
 			path = IQKeyboardManager;
 			sourceTree = "<group>";
 		};
@@ -393,7 +391,7 @@
 			);
 			name = Socket.swift;
 			productName = SocketSwift;
-			productReference = FB9EC26EDF9F26682728AA76EBF87614 /* Socket.swift */;
+			productReference = FB9EC26EDF9F26682728AA76EBF87614 /* SocketSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EB983A8411EABF049907F27321289836 /* Pods-CamaraSwitcherAVS */ = {
@@ -440,8 +438,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -566,7 +564,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Socket.swift/Socket.swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Socket.swift/Socket.swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -737,7 +735,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Socket.swift/Socket.swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Socket.swift/Socket.swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

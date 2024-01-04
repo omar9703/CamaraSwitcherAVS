@@ -1,5 +1,5 @@
 PODS:
-  - IQKeyboardManager (6.5.10)
+  - IQKeyboardManager (6.5.11)
   - Socket.swift (2.4.0)
 
 DEPENDENCIES:
@@ -12,9 +12,9 @@ SPEC REPOS:
     - Socket.swift
 
 SPEC CHECKSUMS:
-  IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
+  IQKeyboardManager: ef43ce1ba1e5aaf4adf222c0a46f39761f246879
   Socket.swift: 4af9137d6b2d2dec00efd8b007704d0af3c3f27a
 
 PODFILE CHECKSUM: bc7f85fb515dd63094c14f1636ca7293322578be
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0
