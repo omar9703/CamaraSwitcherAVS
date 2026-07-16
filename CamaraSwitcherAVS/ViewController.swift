@@ -43,9 +43,9 @@ class ViewController: UIViewController,PickerImageDelegate, buttonActionsConfigD
         scrollview.delegate = self
         panasonicStats.layer.cornerRadius = 12
         ultrixStats.layer.cornerRadius = 12
-        for x in Range(0...49)
+        for x in Range(0...59)
         {
-            if x == 10 || x == 19 || x == 28 || x == 37 || x == 46
+            if x == 10 || x == 19 || x == 28 || x == 37 || x == 46 || x == 55
             {
                 co = 0
                 alt = alt + 70
